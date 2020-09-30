@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02 文字阴影效果——五星红旗</title>
+    <style>
+    body {
+        background-image: url(China.jpg);
+background-repeat: no-repeat;
+background-size:cover;
+background-attachment: fixed;
+
+        background-color: #000;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+    }
+h1{
+      text-shadow: 6px 4px 0 #27f6e6,-5px -5px 0 #ff2a53;
+color: white;}
+div{
+        background-color: rgba(255,255,255,0.5);
+        text-align: center;}
+
+
+p:nth-child(n+2)::first-line{
+color: #FFCC99;
+}
+p::selection{
+    background-color: pink;
+    color: red;}
+p:nth-child(2n)::first-letter{
+  color: #FFFFCC;
+   font-size: 70px;
+}
+
+    /*作业要求（颜色值仅供参考）*/
+    /*1.请将标题设置为抖音文字效果，文字颜色值自行百度。
+	2.请将div水平居中，设置一个具有透明度的白色背景。
+	3.请将第二段开始的每一行文字设置为#FFCC99
+	4.请隔行设置每行首字颜色为#FFFFCC，大小为70px
+	5.请设置选中文字底色和文字同时变色。*/
+    </style>
+</head>
+
+<body>
+    <!-- 补充添加背景音乐 自动播放-->
+
+
+
+    <h1>《五星红旗》</h1>
+    <div>
+        <marquee style="height: 400px;" scrollamount="1" direction="up">
+        <p>填词：天明/谱曲：刘青/原唱：刘媛媛</p>
+        <p>你和太阳一同升起<br>
+            映红中国每寸土地<br>
+            你和共和国血脉相依<br>
+            共同走过半个世纪<br>
+            半个世纪</p>
+        <p>五星红旗啊五星红旗<br>
+            你将中华民族的心连在一起<br>
+            五星红旗啊五星红旗<br>
+            你让全世界中国人扬眉吐气</p>
+        <p>你和太阳一同升起<br>
+            记载中国每一次胜利<br>
+            你和共和国携手奋进<br>
+            共同迈向新的世纪<br>
+            新的世纪</p>
+        <p>五星红旗啊五星红旗<br>
+            你将中华民族的心连在一起<br>
+            五星红旗啊五星红旗<br>
+            你让全世界中国人扬眉吐气<br>
+    </div>
+    <audio>
+<audio src="myflag.mp3" autoplay="myflag.mp3" loop="myflag.mp3">
+
+</audio>
+</body>
+
+</html>

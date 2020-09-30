@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/wxhq.css">
+    <title>02 文字阴影效果——五星红旗</title>
+    <style>
+    body {
+        min-width: 1100px;
+        height: auto;
+        background-color: #000;
+        text-align: center;
+        font: normal 700 40px/70px STXihei/*华文细黑*/;
+        margin: 0 auto;
+    }
+
+    div {
+        width: 1000px;
+        height: auto;
+        background-color: rgba(255,255,255,0.8);
+        margin: 0 auto;
+    }
+
+    div[class="lyrics"] {
+        padding-bottom: 30px;
+    }
+
+    h1 {
+        font: normal 900 70px/100px Microsoft YaHei;
+        color: #f7f7f7;
+        text-shadow: -4px -3px 2px #12fcff,4px 3px 2px #e6082f;
+    }
+
+    p {
+        padding-top: 30px;
+    }
+
+    p:nth-child(2)::first-line,
+    p:nth-child(3)::first-line,
+    p:nth-child(4)::first-line,
+    p:nth-child(5)::first-line {
+        color: #fc9;
+    }
+
+    div[class="lyrics"] p:nth-child(2n)::first-letter {
+        color: #ffc;
+        font-size: 70px;
+    }
+
+    p:nth-child(2)::selection,
+    p:nth-child(3)::selection,
+    p:nth-child(4)::selection {
+        background-color: rgba(0,0,0,1);
+        color: #e6082f;
+        text-shadow: 2px 1px 0px #e6082f,-2px -1px 0px #12fcff;
+    }
+
+    h1::selection {
+        color: #000103;
+        text-shadow: 4px 3px 0px #e6082f,-4px -3px 0px #12fcff;
+    }
+
+    audio {
+        background-color: rgba(255,255,255,0);
+        width: 500px;
+        position: fixed;
+        left: 37%;
+        bottom: 30px;
+    }
+
+    .modal {
+        position: fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fc9;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        opacity: 1;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        pointer-events: auto;
+    }
+
+    .none {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .modal > div {
+        width: 500px;
+        height: 250px;
+        font: normal 30px/55px Microsoft YaHei !important;
+        position: relative;
+        margin: 10% auto;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background: #666;
+        background: -moz-linear-gradient(#666, #999);
+        background: -webkit-linear-gradient(#666, #999);
+        background: -o-linear-gradient(#666, #999);
+    }
+
+    .yes,
+    .no {
+        background: #fff;
+        color: #ffc549;
+        font: normal 20px/50px Microsoft YaHei;
+        position: absolute;
+        right: -12px;
+        text-align: center;
+        top: -10px;
+        width: 24px;
+        text-decoration: none;
+        font-weight: bold;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        -moz-box-shadow: 1px 1px 3px #000;
+        -webkit-box-shadow: 1px 1px 3px #000;
+        box-shadow: 1px 1px 3px #000;
+    }
+
+    .no {
+        right: 24px;
+    }
+
+    .yes:hover,
+    .no:hover {
+        color: #fc9;
+        background: #000;
+    }
+ 
+</style>    
+    <!-- 作业要求（颜色值仅供参考）
+    /*1.请将标题设置为抖音文字效果，文字颜色值自行百度。
+	2.请将div水平居中，设置一个具有透明度的白色背景。
+	3.请将第二段开始的每一行文字设置为#FFCC99
+	4.请隔行设置每行首字颜色为#FFFFCC，大小为70px
+	5.请设置选中文字底色和文字同时变色。 -->   
+</head>
+
+<body>
+    <!-- 补充添加背景音乐 自动播放-->
+    <h1>《五星红旗》</h1>
+    <div class="lyrics">
+        <p>填词：天明/谱曲：刘青/原唱：刘媛媛</p>
+        <p>你和太阳一同升起<br>
+            映红中国每寸土地<br>
+            你和共和国血脉相依<br>
+            共同走过半个世纪<br>
+            半个世纪</p>
+        <p>五星红旗啊五星红旗<br>
+            你将中华民族的心连在一起<br>
+            五星红旗啊五星红旗<br>
+            你让全世界中国人扬眉吐气</p>
+        <p>你和太阳一同升起<br>
+            记载中国每一次胜利<br>
+            你和共和国携手奋进<br>
+            共同迈向新的世纪<br>
+            新的世纪</p>
+        <p>五星红旗啊五星红旗<br>
+            你将中华民族的心连在一起<br>
+            五星红旗啊五星红旗<br>
+            你让全世界中国人扬眉吐气<br></p>
+    </div>
+    <audio id="a1" src="audio/myflag.mp3">
+    </audio>
+   <!--  <div id="modal" class="none">
+        <div>
+            <a id="yes" href="#" title="YES" class="yes">是</a>
+            <a id="no" href="#" title="NO" class="no">否</a>
+            <h2>提示信息：</h2>
+            <p>是否允许本页中的音/视频自动播放？</p>
+        </div>
+    </div> -->
+   <!--  <script>
+        window.onload=function () {
+            let oA=document.querySelector("#a1");
+            let oModal=document.querySelector("#modal");
+            let oYes=document.querySelector("#yes");
+            let oNo=document.querySelector("#no");
+            let userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+            //chrome下的判断
+            if (userAgent.indexOf("Chrome") > -1) {//判断是否是Chrome浏览器
+                //alert("我是 Chrome");
+                oModal.className="modal";
+                oYes.onclick=function () {//选择是
+                    oModal.className="none";//隐藏模态框
+                    let timer=null;
+                    function autoPlay() {//自动播放函数
+                        if (oA.paused) { //判读是否暂停
+                            oA.paused=false;
+                            oA.volume=0.1;
+                            oA.play();
+                        }
+                        else {
+                            clearInterval(timer);
+                        }
+                    }
+                    timer=setInterval(autoPlay,1);//执行自动播放
+                };
+                oNo.onclick=function () {//选择否
+                    oModal.className="none";//隐藏模态框，无自动播放
+                }
+            }
+        }
+    </script> -->
+
+    <script type="text/javascript">
+        window.onload=function () {
+            var control=document.getElementById("a1");
+           if(window.confirm("是否允许本页中的音/视频自动播放？")){
+                    control.play();
+                }
+            }
+    </script>
+
+</body>
+
+</html>

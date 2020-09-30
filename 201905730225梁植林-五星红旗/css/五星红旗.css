@@ -1,0 +1,218 @@
+    body{
+    	padding: 0;
+    	margin: 0;
+        background-color: #000;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+    }
+    #sing{
+    	width: 55%;
+    	margin: 150px auto;
+    	padding-top: 20px;
+    	padding-bottom: 100px;
+    	background-color: rgba(225,225,225,0.5);
+    }
+    h1{
+    	color: #fff;
+    	text-shadow: -5px -5px 0 #28f8f5,5px 5px 0 #fd264b;
+    	user-select: none;
+    }
+    p{
+    	letter-spacing: 5px;
+    	font-family: 楷体;
+    	text-shadow: 3px 3px 3px #ffcc88;
+    }
+    p:nth-child(n+2){
+    	color: #ffcc99;
+    }
+    p:nth-child(even)::first-letter{
+    	color: #ffffcc;
+    	font-size: 70px;
+    }
+    #sing>p::selection{
+    	color: red;
+    	background-color: yellow;
+    }
+    #music-img{
+    	position: absolute;
+    	width: 15%;
+    	height: 15vw;
+    	top: 5%;
+    	right: 5%;
+    	float: right;
+    	border-radius: 50%; 
+    	background: url(../images/红旗.jpg);
+    	animation-name: start,end,music-btn,rightfly;
+    	animation-duration: 2s,10s,5s,10s;
+    	animation-timing-function: linear,linear,linear,linear;
+    	animation-delay: 0s,2s,0s;
+    	animation-iteration-count: 1,1,infinite,1;
+    	user-select: none;
+    }
+    @keyframes music-btn{
+    	0%{
+    		transform: rotate(0deg);
+    	}
+    	100%{
+    		transform: rotate(360deg);
+    	}
+    }
+    #music-img:hover{
+    	animation-play-state: paused;
+    }
+    #music{
+    	position: absolute;
+    	width: 200px;
+    	height: 100px;
+    	bottom: 15%;
+    	left: 50%;
+    	transform: translate(-50%);   
+    }
+    #shap{
+    	position: absolute;
+    	width: 80px;
+    	height: 80px;
+    	left: 8%;
+    	top: 20%;
+    	background-color: red;
+    	border-radius: 50% 50% 0 50%;
+    	box-shadow: 2px 2px pink;
+    	transform: rotate(45deg);
+    }
+    #shap:after{
+    	content: '';
+    	position: absolute;
+    	width: 400px;
+    	height: 2px;
+    	top: 100%;
+    	left: 100%;
+    	background-color: rgba(230,0,0,0.5);
+    	transform: rotate(45deg);
+    	transform-origin: 0 0;   	
+    }
+    h1,#sing,#shap{
+    	animation-name: start,end;
+    	animation-duration: 2s,10s;
+    	animation-timing-function: linear,linear;
+    	animation-delay: 0s,2s;
+    	animation-iteration-count: 1,1;  
+    }
+    @keyframes start{
+    	0%{
+    		opacity: 0;
+    	}
+    	100%{
+    		opacity: 0;
+    	}
+    }
+    @keyframes end{
+    	0%{
+    		opacity: 0;
+    	}
+    	50%{
+    		opacity: 0.5;
+    	}
+    	100%{
+    		opacity: 1;
+    	}
+    }
+    [id^=imglist]{
+    	position: relative;
+    	width: 20%;
+    	padding-top: 15%;
+    }
+    #imglist-left{
+    	float: left;
+    }
+    #imglist-right{
+    	float: right;
+    }
+    [class^=rotate]>img{
+    	width: 80%;
+    	height: 220px;
+    	margin: 0 0 35px 0;
+    	border-radius: 10px;
+    	user-select: none;
+    }
+    [class$=left] img{
+    	animation-name: start,end,img-leftside,leftfly;
+    	animation-duration: 2s,10s,5s,10s;
+    	animation-timing-function: linear,linear,linear,linear;
+    	animation-delay: 0s,2s,0s,0s;
+    	animation-direction: normal,normal,alternate,normal;
+    	animation-iteration-count: 1,1,infinite,1;   	
+    }
+    [class$=right] img{
+    	animation-name: start,end,img-rightside,rightfly;
+    	animation-duration: 2s,10s,5s,10s;
+    	animation-timing-function: linear,linear,linear,linear;
+    	animation-delay: 0s,2s,0s,0s;
+    	animation-direction: normal,normal,alternate,normal;
+    	animation-iteration-count: 1,1,infinite,1;   	
+    }
+    @keyframes img-leftside{
+    	0%{
+    		border: 8px solid red;
+    		transform: rotate(-15deg);
+    	}
+    	50%{
+    		border: 8px solid brown;
+    	}
+    	100%{
+    		border: 8px solid purple;
+    		transform: rotate(15deg);
+    	}
+    }
+    @keyframes img-rightside{
+    	0%{
+    		border: 8px solid red;
+    		transform: rotate(15deg);    		
+    	}
+    	50%{
+    		border: 8px solid brown;
+    	}
+    	100%{
+    		border: 8px solid purple;
+    		transform: rotate(-15deg);    		
+    	}
+    }
+    @keyframes leftfly{
+    	0%{
+    		transform: translateZ(300px) scale(0) rotateZ(720deg);
+    	}
+    	100%{
+    		transform: translateZ(0px) scale(1) rotateZ(0deg);
+    	}
+    }
+    @keyframes rightfly{
+    	0%{
+    		transform: translateZ(-300px) scale(0) rotateZ(-720deg);
+    	}
+    	100%{
+    		transform: translateZ(0px) scale(1) rotateZ(0deg);
+    	}
+    }
+    pre>h2{
+    	position: fixed;
+    	color: red;
+    	font-size: 100px;
+    	top: 40%;
+    	left: 40%;
+    	transform: translate(-60%,-60%);
+    	user-select: none;
+    	animation: blessing 5s linear 0s 1 forwards;
+    }
+    @keyframes blessing{
+    	0%{
+    		opacity: 1;
+    	}
+    	50%{
+    		opacity: 0.5;
+    	}
+    	100%{
+    		opacity: 0;
+    		clear: both;
+    		z-index: -999;
+    	}
+    }
